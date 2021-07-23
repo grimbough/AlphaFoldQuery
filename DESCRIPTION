@@ -1,0 +1,21 @@
+Package: AlphaFoldQuery
+Type: Package
+Title: What the Package Does Using Title Case
+Version: 0.0.1
+Date: 2021-07-23
+Authors@R: c(person(
+                    "Mike", "Smith", 
+                    role = c("aut", "cre"), 
+                    email = "grimbough@gmail.com",
+                    comment = c(ORCID = "0000-0002-7800-3848")
+                    )
+            )
+Description: More details about what the package does. See
+       <http://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file>
+       for details on how to write this part.
+License: GPL (>= 2)
+Requires: R (>= 4.1)
+Imports: jsonlite, methods
+Suggests: tinytest
+Encoding: UTF-8
+RoxygenNote: 7.1.1

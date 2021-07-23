@@ -1,0 +1,43 @@
+---
+title: "Working with Predicted Aligned Error files"
+author: "Mike Smith"
+date: "7/23/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-packages, message=FALSE}
+library(AlphaFoldQuery)
+library(ggplot2)
+```
+
+```{r reading-example}
+url <- "https://alphafold.ebi.ac.uk/files/AF-O15552-F1-predicted_aligned_error_v1.json"
+PAE <- readPAE(url)
+PAE
+```
+
+## Including Plots
+
+
+```{r plot-with-ggplot, echo=TRUE}
+
+df_format <- as(PAE, "data.frame")
+
+ggplot(df_format) +
+    geom_tile(aes(x = residue2, y = residue1, fill = distance)) +
+    coord_fixed() +
+    scale_x_continuous(expand = expansion(mult = 0)) +
+    scale_y_reverse(expand = expansion(mult = 0)) +
+    scale_fill_continuous(type = "viridis", guide = "colourbar") +
+    labs(x = "Scored Residue",
+         y = "Aligned Residue",
+         fill = "Expected Position Error (Ångströms)") +
+    theme_bw() +
+    theme(legend.position = "bottom") +
+    guides(fill = guide_colourbar(title.position="top",barwidth = 12))
+
+```
