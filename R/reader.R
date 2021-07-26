@@ -1,4 +1,9 @@
 
+.validUniprotID <- function(id) {
+    grepl(x = id,
+          pattern = "^([A-N,R-Z][0-9]([A-Z][A-Z, 0-9][A-Z, 0-9][0-9]){1,2})|([O,P,Q][0-9][A-Z, 0-9][A-Z, 0-9][A-Z, 0-9][0-9])(\\.\\d+)?$")
+}
+
 .createURL <- function(input) {
     url <- sprintf("https://alphafold.ebi.ac.uk/files/AF-%s-F1-predicted_aligned_error_v1.json",
                    input)
@@ -39,6 +44,9 @@ readPAE <- function(input) {
     if(is_url) {
         json <- fromJSON(input)
     } else {
+        if(!.validUniprotID(input)) {
+            stop(input, " is not a valid Uniprot ID")
+        }
         json <- .testURL(.createURL(input))[[1]]
     }
     
