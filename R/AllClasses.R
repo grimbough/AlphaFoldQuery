@@ -17,3 +17,12 @@ setAs(from = "PredictedAlignedError", to = "data.frame",
           distance = errors(from)
         )
       })
+
+setAs(from = "PredictedAlignedError", to = "matrix",
+      def = function(from) {
+        matrix(
+          errors(from), 
+          nrow = sqrt(length(errors(from))),
+          byrow = FALSE
+        )
+      })
