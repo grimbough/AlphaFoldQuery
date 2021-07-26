@@ -5,8 +5,6 @@ setMethod("show", signature = "PredictedAlignedError", function(object) {
     cat("Maximum Predicted Alignment Error:", maxPredictedError(object))
 })
 
-#' 
-#' @export
 setGeneric("errors", function(object) {
     standardGeneric("errors")
 })
@@ -18,9 +16,6 @@ setMethod("errors",
           }
 )
 
-
-#' 
-#' @export
 setGeneric("maxPredictedError", function(object) {
     standardGeneric("maxPredictedError")
 })

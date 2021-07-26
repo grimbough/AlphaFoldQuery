@@ -1,8 +1,12 @@
 ---
-title: "Working with Predicted Aligned Error files"
+title: "Working With Predicted Aligned Error Files"
 author: "Mike Smith"
 date: "7/23/2021"
 output: html_document
+vignette: >
+  %\VignetteIndexEntry{Working with predicted aligned error files}
+  %\VignetteEncoding{UTF-8}  
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ```{r setup, include=FALSE}

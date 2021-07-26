@@ -10,12 +10,11 @@ Authors@R: c(person(
                     comment = c(ORCID = "0000-0002-7800-3848")
                     )
             )
-Description: More details about what the package does. See
-       <http://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file>
-       for details on how to write this part.
+Description: Read, store, and plot "predicted aligned error" files available from AlphaFold.
 License: GPL (>= 2)
 Requires: R (>= 4.1)
-Imports: jsonlite, methods
-Suggests: tinytest
+Imports: jsonlite, methods, httr
+Suggests: tinytest, knitr, rmarkdown, ggplot2
+VignetteBuilder: knitr
 Encoding: UTF-8
 RoxygenNote: 7.1.1
